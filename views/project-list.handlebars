@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Dashboard - Project list</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="/assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <!-- <link href="/assets/css/demo.css" rel="stylesheet" /> -->
+    <!--     Fonts and icons     -->
+    <link href="/assets/css/material-icons.css" rel="stylesheet">
+    <link href="/css/floating-button.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <style>
+        /*table {border-collapse:collapse; table-layout:fixed; width:310px;}
+        table td {width:100px; word-wrap:break-word;*/}
+   </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="sidebar" class="sidebar" data-color="purple" data-image="../images/background.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    {{ user.fullname }}
+                </a>
+            </div>
+ 
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+
+                    <li>
+
+                        <a href="/dashboard">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/profile">
+                            <i class="material-icons">person</i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="/dashboard/projects">
+                            <i class="material-icons">library_books</i>
+                            <p>Project List</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/manage_projects">
+                            <i class="material-icons">list</i>
+                            <p>Manage Projects</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/teams">
+                            <i class="material-icons">people</i>
+                            <p>Teams</p>
+                        </a>
+                    </li>
+                  <!--   <li>
+                        <a href="#">
+                            <i class="material-icons">edit</i>
+                            <p>Manage Projects</p>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="#">
+                            <i class="material-icons text-gray">notifications</i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li class="active-pro">
+                        <a href="/users/logout">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> 
+
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">5</span>
+                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Ahmed Yusuf responded to your email</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">You have 5 new tasks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Andrew Mark Sent you a message</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">One new Notification</a>
+                                    </li>
+                                   <!--  <li>
+                                        <a href="#"></a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">person</i>
+                                    <p class="hidden-lg hidden-md">Profile</p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/dashboard/profile">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Conversations</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="/users/logout">Logout</a>
+                                    </li>
+                                   <!--  <li>
+                                        <a href="#"></a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group  is-empty">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="material-input"></span>
+                            </div>
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Project Lists (Current)</h4>
+                                    <p class="category">
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                     ALLOCATION OF PROGRAMMES/PROJECTS TO DEPARTMENT FOR IMPLEMENTATION</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <th>Programme</th>
+                                            <th>Lead Team</th>
+                                            <th>Collaborative Team</th>
+                                            <th>Progress</th>
+                                            <th>Actions</th>
+                                        </thead>
+                                        <tbody>
+                                            <div>
+                                            <tr class="alert alert-dismissable">
+                                                <td>
+                                                    Value Chain Export Development
+                                                </td>
+                                                <td>Policy & Strategy</td>
+                                                <td>
+                                                   <span class="label label-danger">None</span>
+                                                 <!--   <span class="label label-warning">P&S</span>
+                                                   <span class="label label-success">CC</span> -->
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="alert alert-dismissable">
+                                                <td>
+                                                    Strategic Collaboration with Multi-lateral Agencies
+                                                </td>
+                                                <td>Policy & Strategy</td>
+                                                <td>
+                                                   <span class="label label-danger">None</span>
+                                                 <!--   <span class="label label-warning">P&S</span>
+                                                   <span class="label label-success">CC</span> -->
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="alert alert-dismissable">
+                                                <td>
+                                                    Domestic Export Warehouse and Aggregation Centre Initiative (DEW)
+                                                </td>
+                                                <td>Product Department</td>
+                                                <td>
+                                                   <span class="label label-success">Policy&Strategy</span>
+                                                 <!--   <span class="label label-warning">P&S</span>
+                                                   <span class="label label-success">CC</span> -->
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" style="width: 20%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                           
+                                           <tr class="alert alert-dismissable">
+                                                <td>
+                                                    Export Market Entry Support Services/ Nigeria Trade House (NTH)
+                                                </td>
+                                                <td>IEO</td>
+                                                <td>
+                                                   <span class="label label-success">NEO</span>
+                                                   <span class="label label-warning">P&S</span>
+                                                   <!-- <span class="label label-success">CC</span> -->
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="alert alert-dismissable">
+                                                <td>
+                                                    African Growth and Opportunity Act (AGOA)
+                                                </td>
+                                                <td>Regional Office</td>
+                                                <td>
+                                                   <span class="label label-success">IEO</span>
+                                                   <span class="label label-warning">P&S</span>
+                                                   <span class="label label-success">CC</span>
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-info active" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="alert alert-dismissable">
+                                                <td>
+                                                    Conformity to EU requirement on export of Agricultural Products including Cowpeas (Beans))
+                                                </td>
+                                                <td>PD</td>
+                                                <td>
+                                                   <span class="label label-success">Policy&Strategy</span>
+                                                 <!--   <span class="label label-warning">P&S</span>
+                                                   <span class="label label-success">CC</span> -->
+                                                </td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-bar-warning active" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs">
+                                                        <i class="material-icons">visibility</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Edit Project" class="btn btn-primary btn-simple btn-xs">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-dismiss="alert" onclick="showError('Deleted','success',true);">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                        </tbody> 
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card card-plain">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Active Members</h4>
+                                    <p class="category">View active project members</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Dept</th>
+                                            <th>Status</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>{{ user.fullname }}</td>
+                                                <td>P & C</td>
+                                                <td><i class="small material-icons">cloud</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Samuel Agbo</td>
+                                                <td>Policy & Strategy</td>
+                                                <td><i class="small material-icons">cloud_off</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Daniel Ame</td>
+                                                <td>IEO</td>
+                                                <td><i class="small material-icons">cloud</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Dele Olawunmi</td>
+                                                <td>IEO</td>
+                                                <td><i class="small material-icons">cloud</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Emeka Charlse</td>
+                                                <td>IEO</td>
+                                                <td><i class="small material-icons">cloud_off</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Dele Olawunmi</td>
+                                                <td>IEO</td>
+                                                <td><i class="small material-icons">cloud</i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+<!--                     <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav> -->
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">NEPC</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- floating button -->
+        <div class="zoom">
+        <a class="zoom-fab zoom-btn-large" id="zoomBtn"><i class="medium material-icons">add</i></a>
+        <ul class="zoom-menu">
+            <li><a data-toggle="tooltip" data-placement="top" title="Add Team" class="zoom-fab zoom-btn-sm zoom-btn-person scale-transition scale-out"><i class="material-icons">group_add</i></a></li>
+            <li><a href="/dashboard/manage_projects" data-toggle="tooltip" data-placement="top" title="Add Project" class="zoom-fab zoom-btn-sm zoom-btn-doc scale-transition scale-out"><i class="material-icons">assessment</i></a></li>
+            <!-- <li><a class="zoom-fab zoom-btn-sm zoom-btn-tangram scale-transition scale-out"></a></li> -->
+            <li><a data-toggle="tooltip" data-placement="top" title="Settings" class="zoom-fab zoom-btn-sm zoom-btn-report scale-transition scale-out"><i class="material-icons">settings</i></a></li>
+            <li><a href="/users/logout" data-toggle="tooltip" data-placement="top" title="Logout" class="zoom-fab zoom-btn-sm zoom-btn-feedback scale-transition scale-out"><i class="material-icons">exit_to_app</i></a></li>
+        </ul>
+<!--         <div class="zoom-card scale-transition scale-out">
+            <ul class="zoom-card-content">
+            <li><a href="#">Content 1</a></li>
+            <li>Content 2</li>
+            <li>Content 3</li>
+            <li>Content 4</li>
+            <li>Content 5</li>
+            </ul>
+        </div> -->
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<!-- <script src="../assets/js/demo.js"></script> -->
+<script src="../assets/js/toast.js"></script>
+
+<script>
+    $('#zoomBtn').click(function() {
+    $('.zoom-btn-sm').toggleClass('scale-out');
+    if (!$('.zoom-card').hasClass('scale-out')) {
+        $('.zoom-card').toggleClass('scale-out');
+    }
+    });
+
+    $('.zoom-btn-sm').click(function() {
+    var btn = $(this);
+    var card = $('.zoom-card');
+    if ($('.zoom-card').hasClass('scale-out')) {
+        $('.zoom-card').toggleClass('scale-out');
+    }
+    if (btn.hasClass('zoom-btn-person')) {
+        card.css('background-color', '#d32f2f');
+    } else if (btn.hasClass('zoom-btn-doc')) {
+        card.css('background-color', '#fbc02d');
+       } else if (btn.hasClass('zoom-btn-tangram')) {
+        card.css('background-color', '#388e3c');
+    } else if (btn.hasClass('zoom-btn-report')) {
+        card.css('background-color', '#1976d2');
+    } else {
+        card.css('background-color', '#7b1fa2');
+    }
+    });
+    
+    $(document).ready(function() {
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>
+
+</html>

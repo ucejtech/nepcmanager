@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Dashboard - Tasks</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="/assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="/assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="/assets/css/material-icons.css" rel="stylesheet">
+    <link href="/css/floating-button.css" rel="stylesheet" type="text/css">
+    <!-- <link href='/assets/css/roboto.css' rel='stylesheet' type='text/css'> -->
+    <!-- lobi -->
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/assets/css/lobilist.css">
+</head>
+<style type="text/css">
+    [data-notify="progressbar"] {
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 5px;
+}
+</style>
+
+<body>
+    <div class="wrapper">
+        <div id="sidebar" class="sidebar" data-color="purple" data-image="../images/background.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    {{ user.fullname }}
+                </a>
+            </div>
+ 
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+
+                    <li>
+
+                        <a href="/dashboard">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/profile">
+                            <i class="material-icons">person</i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/projects">
+                            <i class="material-icons">library_books</i>
+                            <p>Project List</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="/dashboard/manage_projects">
+                            <i class="material-icons">list</i>
+                            <p>Manage Projects</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/teams">
+                            <i class="material-icons">people</i>
+                            <p>Teams</p>
+                        </a>
+                    </li>
+                  <!--   <li>
+                        <a href="#">
+                            <i class="material-icons">edit</i>
+                            <p>Manage Projects</p>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="#">
+                            <i class="material-icons text-gray">notifications</i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li class="active-pro">
+                        <a href="/users/logout">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> 
+                        
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">5</span>
+                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Ahmed Yusuf responded to your email</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">You have 5 new tasks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Andrew Mark Sent you a message</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">One new Notification</a>
+                                    </li>
+                                   <!--  <li>
+                                        <a href="#"></a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">person</i>
+                                    <p class="hidden-lg hidden-md">Profile</p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/dashboard/profile">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Conversations</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="/users/logout">Logout</a>
+                                    </li>
+                                   <!--  <li>
+                                        <a href="#"></a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group  is-empty">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="material-input"></span>
+                            </div>
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+    <!-- <div class="content"> -->
+<div class="container">
+    <div id="lobilist">
+        <!--Examples-->
+        <div id="lobilist-examples">
+        
+            <hr>
+            <!--Basic example-->
+            <div>
+                <div class="bs-example">
+                    <h4>Manage Projects</h4>
+
+                    <div id="todo-lists-basic-demo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- floating button -->
+        <div class="zoom">
+        <a class="zoom-fab zoom-btn-large" id="zoomBtn"><i class="medium material-icons">add</i></a>
+        <ul class="zoom-menu">
+            <li><a data-toggle="tooltip" data-placement="top" title="Add Team" class="zoom-fab zoom-btn-sm zoom-btn-person scale-transition scale-out"><i class="material-icons">group_add</i></a></li>
+            <li><a href="/dashboard/manage_projects" data-toggle="tooltip" data-placement="top" title="Add Project" class="zoom-fab zoom-btn-sm zoom-btn-doc scale-transition scale-out"><i class="material-icons">assessment</i></a></li>
+            <!-- <li><a class="zoom-fab zoom-btn-sm zoom-btn-tangram scale-transition scale-out"></a></li> -->
+            <li><a data-toggle="tooltip" data-placement="top" title="Settings" class="zoom-fab zoom-btn-sm zoom-btn-report scale-transition scale-out"><i class="material-icons">settings</i></a></li>
+            <li><a href="/users/logout" data-toggle="tooltip" data-placement="top" title="Logout" class="zoom-fab zoom-btn-sm zoom-btn-feedback scale-transition scale-out"><i class="material-icons">exit_to_app</i></a></li>
+        </ul>
+<!--         <div class="zoom-card scale-transition scale-out">
+            <ul class="zoom-card-content">
+            <li><a href="#">Content 1</a></li>
+            <li>Content 2</li>
+            <li>Content 3</li>
+            <li>Content 4</li>
+            <li>Content 5</li>
+            </ul>
+        </div> -->
+        </div>
+                    
+                    
+                    
+        </div>
+    <!-- </div> -->
+
+<!--     <footer class="footer">
+        <div class="container-fluid">
+            <p class="copyright pull-right">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                <a href="/">NEPC</a>
+            </p>
+        </div>
+    </footer> -->
+
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+
+<!-- lobi -->
+
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch-improved.js"></script>
+<script src="../assets/js/lobilist.js"></script>
+
+<script src="../assets/js/lobibox.min.js"></script>
+
+<script>
+    $('#zoomBtn').click(function() {
+    $('.zoom-btn-sm').toggleClass('scale-out');
+    if (!$('.zoom-card').hasClass('scale-out')) {
+        $('.zoom-card').toggleClass('scale-out');
+    }
+    });
+
+    $('.zoom-btn-sm').click(function() {
+    var btn = $(this);
+    var card = $('.zoom-card');
+    if ($('.zoom-card').hasClass('scale-out')) {
+        $('.zoom-card').toggleClass('scale-out');
+    }
+    if (btn.hasClass('zoom-btn-person')) {
+        card.css('background-color', '#d32f2f');
+    } else if (btn.hasClass('zoom-btn-doc')) {
+        card.css('background-color', '#fbc02d');
+       } else if (btn.hasClass('zoom-btn-tangram')) {
+        card.css('background-color', '#388e3c');
+    } else if (btn.hasClass('zoom-btn-report')) {
+        card.css('background-color', '#1976d2');
+    } else {
+        card.css('background-color', '#7b1fa2');
+    }
+    });
+    
+    $(function () {
+        $('#todo-lists-basic-demo').lobiList({
+            lists: [
+                // {
+                //     id: 'todo',
+                //     title: 'Strategic Collaboration with Multi-lateral Agencies',
+                //     defaultStyle: 'lobilist-info',
+                //     items: [
+                //         {
+                //             title: 'Value Chain Export Development',
+                //             description: 'for strategic agric products under the zero oil plan (Cotton, Rice, Leather, Cocoa, Palm Oil, Cashew, Sesame, Rubber, Soya) Gold Sugar, Petrochemical.',
+                //             // team: 'P&C',
+                //             dueDate: '2015-01-31'
+                //         },
+                //         {
+                //             title: '',
+                //             description: 'Advocacy visits to identified projects, investors & exporters',
+                //             done: false
+                //         },
+                //         {
+                //             title: '',
+                //             description: 'Engagement & high level meeting with the office of Vice-President to enlist support for the Project',
+                //             done: false
+                //         },
+                //         {
+                //             title: '',
+                //             description: 'Identify their prospects and challenges for necessary intervention and output expansion.'
+                //         },
+                //         {
+                //             title: '',
+                //             description: 'Domestic Export Warehouse and Aggregation Centre Initiative (DEW).',
+                //             dueDate: '2015-02-02'
+                //         },
+                //         {
+                //             title: '',
+                //             description: 'Establishment of Bulk Aggregation Centres with all relevant agencies in charge of inspection and certification e.g SON, NAFDAC, NAQS, FPIS etc. (This will serve as one stop shop for export transaction)'
+                //         }
+                //     ]
+                // },
+                {
+                    id: 'doing',
+                    title: 'Export Incentive Scheme',
+                    defaultStyle: 'lobilist-danger',
+                    items: [
+                        {
+                            title: '',
+                            description: 'Export Expansion Grant'
+                        },
+                        {
+                            title: '',
+                            description: 'Export Development Fund (EDF)'
+                        },
+                        {
+                            title: '',
+                            description: 'New Basket of Incentives (NBIS)',
+                            // dueDate: '2018-05-04',
+                            done: false
+                        },
+                        {
+                            description: 'Service Export Fund'
+                        },
+                        {
+                            description: 'Identify Global players/Investors in the value chain with a view to packaging attractive incentives for them'
+                        },
+                        {
+                            description: 'Organise an interactive forum of identified Investors with the office of the Vice-President'
+                        }
+                    ]
+                },
+                {
+                    id: 'doing',
+                    title: 'Current',
+                    defaultStyle: 'lobilist-info',
+                    items: [
+                        {
+                            title: '',
+                            description: 'Conduct an export potential Survey in all States.'
+                        },
+                        {
+                            title: '',
+                            description: 'Conformity to EU requirement on export of Agricultural Products including Cowpeas (Beans)'
+                        },
+                        {
+                            title: '',
+                            description: 'African Growth and Opportunity Act (AGOA).',
+                            dueDate: '4',
+                            done: false
+                        }
+                    ]
+                },
+                {
+                    id: 'todo',
+                    title: 'Completed',
+                    defaultStyle: 'lobilist-warning',
+                    items: [
+                        {
+                            title: '',
+                            description: 'Export Training Institute',
+                            // team: 'P&C',
+                            dueDate: ''
+                        },
+                        {
+                            title: '',
+                            description: 'Mainstreaming Informal Trade Activities',
+                            done: true
+                        },
+                        {
+                            title: '',
+                            description: 'Standardization of Nigerian Precious Stones/Metals for Export (GOLD)'
+                        },
+                        {
+                            title: '',
+                            description: 'Export Training Institute.',
+                            dueDate: ''
+                        }
+                    ]
+                },
+
+            ]
+        });
+    });
+</script>
+
+</html>
