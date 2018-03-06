@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png" />
-    <link rel="icon" type="image/png" href="../assets/img/logo.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo2.png" />
+    <link rel="icon" type="image/png" href="../assets/img/logo2.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Dashboard - Teams</title>
+    <title>Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -14,13 +14,12 @@
     <!--  Material Dashboard CSS    -->
     <link href="/assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <!-- <link href="/assets/css/demo.css" rel="stylesheet" /> -->
+    <link href="/assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="/assets/css/material-icons.css" rel="stylesheet">
     <link href="/assets/css/roboto.css" rel="stylesheet" type="text/css">
     <link href="/css/floating-button.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"/>
-
 
 </head>
 
@@ -33,6 +32,8 @@
     right: 25px;
     top: 25px;
 }
+
+
 .media-date li { padding: 0; }
 .media-date li:first-child:before { content: ''; }
 .media-date li:before { 
@@ -40,9 +41,11 @@
     margin-left: -2px; 
     margin-right: 2px;
 }
+
 .media-comment { margin-bottom: 20px; }
 .media-replied { margin: 0 0 20px 50px; }
 .media-replied .media-heading { padding-left: 6px; }
+
 
 .btn-circle {
     font-weight: bold;
@@ -50,6 +53,7 @@
     padding: 6px 15px;
     border-radius: 20px;
 }
+
 .btn-circle span { padding-right: 6px; }
 .embed-responsive { margin-bottom: 20px; }
 .tab-content {
@@ -59,6 +63,7 @@
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
+
 .custom-input-file {
     overflow: hidden;
     position: relative;
@@ -103,6 +108,7 @@ input[type="file"]{
 .glyphicon-comment { color:#27ae60;}
 .separator { padding-right:5px;padding-left:5px; }
 .section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
+
 #sidebar.active {
     margin-left: -250px;
 }
@@ -278,16 +284,19 @@ input[type="file"]{
                 </div>
             </nav>
             <div id="content" class="content">
-
+                <!-- <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                    <i class="glyphicon glyphicon-align-left"></i>
+                    Toggle Sidebar
+                </button> -->
                 <div class="container-fluid">
-                    <!-- Row -->
+
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card card-nav-tabs">
-                                <div class="card-header" data-background-color="purple">
+                                <div class="card-header" data-background-color="black">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <!-- <span class="nav-tabs-title">Tasks:</span> -->
+                                            {{!-- <span class="nav-tabs-title">Tasks:</span> --}}
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
                                                     <a href="#profile" data-toggle="tab">
@@ -311,13 +320,9 @@ input[type="file"]{
                                             </ul>
                                         </div>
                                     </div>
-                                </div> 
-
-                                <!-- card-content -->
+                                </div>
                                 <div class="card-content">
                                     <div class="tab-content">
-
-                                        <!-- tab-pane -->
                                         <div class="tab-pane active" id="profile">
                                             <ul class="list-group">
                                                 <li class="list-group-item">
@@ -358,18 +363,21 @@ input[type="file"]{
                                                         <div class="row rating-desc">
                                                             <div class="col-md-12">
                                                                 <span class="glyphicon glyphicon-user"></span>(147 Members)<span class="separator">|</span>
-                                                                <span class="glyphicon glyphicon-comment"></span>(150 Conversations)
-                                                               <!--  <span class="float-right"><a class="float-right btn btn-info" href="#" target="_blank">Add Member</a><a class="float-right btn btn-danger" href="#" target="_blank">Delete Team</a>
-                                                        </span>
- -->                                                         </div>
+                                                                <span class="glyphicon glyphicon-comment"></span>(150 Conversations)<span class="separator">|</span>
+                                                                <!-- <span class="float-right"><a class="float-right btn btn-info" href="#" target="_blank">Add Member</a><a class="float-right btn btn-danger" href="#" target="_blank">Delete Team</a>
+                                                        </span> -->
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                                 <li class="list-group-item">
                                                     <div class="row">
                                                         <div class="col-xs-3 col-md-3 col-sm-12 text-center">
-                                                            <img src="../images/team.jpg" alt="team-logo" class="img-circle" style="height: 100px; width: 100px">
+                                                            <img src="../assets/img/logo2.png" alt="team-logo" class="img-circle" style="height: 100px; width: 100px">
                                                         </div>
                                                     <div class="col-xs-9 col-md-9 section-box">
                                                     <h3>
@@ -391,7 +399,7 @@ input[type="file"]{
                                                 <li class="list-group-item">
                                                     <div class="row">
                                                         <div class="col-xs-3 col-md-3 col-sm-12 text-center">
-                                                            <img src="../images/team3.png" alt="team-logo" class="img-circle" style="height: 100px; width: 100px">
+                                                            <img src="../assets/img/logo2.png" alt="team-logo" class="img-circle" style="height: 100px; width: 100px">
                                                         </div>
                                                     <div class="col-xs-9 col-md-9 section-box">
                                                     <h3>
@@ -409,268 +417,318 @@ input[type="file"]{
                                                         </div>
                                                     </div>
                                                 </li>
+                                               <!--  <li class="list-group-item">Vestibulum at eros</li> -->
                                             </ul>
                                         </div>
 
-                                        <!-- tab-pane -->
-                                        <div class="tab-pane" id="messages">
-                                            <div class="comment-tabs">            
-                                                <ul class="media-list">
-                                                <li class="media">
-                                                    <a class="pull-left" href="#">
-                                                    <img class="media-object img-circle" src="{{ user.avatar }}" alt="profile">
-                                                    </a>
-                                                    <div class="media-body">
-                                                    <div class="well well-lg">
-                                                        <h4 class="media-heading text-uppercase reviews">{{ user.username }} </h4>
-                                                        <ul class="media-date text-uppercase reviews list-inline">
-                                                            <li class="dd">22</li>
-                                                            <li class="mm">09</li>
-                                                            <li class="aaaa">2014</li>
-                                                        </ul>
-                                                        <p class="media-comment">
-                                                            Great snippet! Thanks for sharing.
-                                                        </p>
-                                                        <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                        <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 comments</a>
-                                                    </div>              
-                                                    </div>
-                                                    <div class="collapse" id="replyOne">
-                                                        <ul class="media-list">
-                                                            <li class="media media-replied">
-                                                                <a class="pull-left" href="#">
-                                                                <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
-                                                                </a>
-                                                                <div class="media-body">
-                                                                <div class="well well-lg">
-                                                                    <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
-                                                                    <ul class="media-date text-uppercase reviews list-inline">
-                                                                        <li class="dd">22</li>
-                                                                        <li class="mm">09</li>
-                                                                        <li class="aaaa">2014</li>
-                                                                    </ul>
-                                                                    <p class="media-comment">
-                                                                        Nice job Maria.
-                                                                    </p>
-                                                                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                                </div>              
-                                                                </div>
-                                                            </li>
-                                                            <li class="media media-replied" id="replied">
-                                                                <a class="pull-left" href="#">
-                                                                <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
-                                                                </a>
-                                                                <div class="media-body">
-                                                                <div class="well well-lg">
-                                                                    <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Mary</h4></h4>
-                                                                    <ul class="media-date text-uppercase reviews list-inline">
-                                                                        <li class="dd">22</li>
-                                                                        <li class="mm">09</li>
-                                                                        <li class="aaaa">2014</li>
-                                                                    </ul>
-                                                                    <p class="media-comment">
-                                                                        Thank you Guys!
-                                                                    </p>
-                                                                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                                </div>              
-                                                                </div>
-                                                            </li>
-                                                        </ul>  
-                                                    </div>
-                                                </li>          
-                                                <li class="media">
-                                                    <a class="pull-left" href="#">
-                                                    <img style="height: 110px; width: 110px;" class="media-object img-circle" src="/images/olusegun_awolowo.jpg" alt="profile">
-                                                    </a>
-                                                    <div class="media-body">
-                                                    <div class="well well-lg">
-                                                        <h4 class="media-heading text-info reviews">Awolowo Olusegun</h4>
-                                                        <ul class="media-date text-uppercase reviews list-inline">
-                                                            <li class="dd">22</li>
-                                                            <li class="mm">09</li>
-                                                            <li class="aaaa">2014</li>
-                                                        </ul>
-                                                        <p class="media-comment">
-                                                            I'm looking for that. Thanks!
-                                                        </p>
-                                                        <div class="embed-responsive embed-responsive-16by9">
-                                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/80lNjkcp6gI" allowfullscreen></iframe>
+                                        <div class="tab-pane" id="messages">           
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="comments-logout">                
+                                                    <ul class="media-list">
+                                                    <li class="media">
+                                                        <a class="pull-left" href="#">
+                                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
+                                                        </a>
+                                                        <div class="media-body">
+                                                        <div class="well well-lg">
+                                                            <h4 class="media-heading text-uppercase reviews">Marco </h4>
+                                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                                <li class="dd">22</li>
+                                                                <li class="mm">09</li>
+                                                                <li class="aaaa">2014</li>
+                                                            </ul>
+                                                            <p class="media-comment">
+                                                                Great snippet! Thanks for sharing.
+                                                            </p>
+                                                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                                            <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 comments</a>
+                                                        </div>              
                                                         </div>
-                                                        <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                    </div>              
+                                            <div class="collapse" id="replyOne">
+                                                <ul class="media-list">
+                                                    <li class="media media-replied">
+                                                        <a class="pull-left" href="#">
+                                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
+                                                        </a>
+                                                        <div class="media-body">
+                                                        <div class="well well-lg">
+                                                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
+                                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                                <li class="dd">22</li>
+                                                                <li class="mm">09</li>
+                                                                <li class="aaaa">2014</li>
+                                                            </ul>
+                                                            <p class="media-comment">
+                                                                Nice job Maria.
+                                                            </p>
+                                                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                                        </div>              
+                                                        </div>
+                                                    </li>
+                                                    <li class="media media-replied" id="replied">
+                                                        <a class="pull-left" href="#">
+                                                        <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
+                                                        </a>
+                                                        <div class="media-body">
+                                                        <div class="well well-lg">
+                                                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Mary</h4></h4>
+                                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                                <li class="dd">22</li>
+                                                                <li class="mm">09</li>
+                                                                <li class="aaaa">2014</li>
+                                                            </ul>
+                                                            <p class="media-comment">
+                                                                Thank you Guys!
+                                                            </p>
+                                                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                                        </div>              
+                                                        </div>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                        </li>          
+                                        <li class="media">
+                                            <a class="pull-left" href="#">
+                                            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg" alt="profile">
+                                            </a>
+                                            <div class="media-body">
+                                            <div class="well well-lg">
+                                                <h4 class="media-heading text-uppercase reviews">Nico</h4>
+                                                <ul class="media-date text-uppercase reviews list-inline">
+                                                    <li class="dd">22</li>
+                                                    <li class="mm">09</li>
+                                                    <li class="aaaa">2014</li>
+                                                </ul>
+                                                <p class="media-comment">
+                                                    I'm looking for that. Thanks!
+                                                </p>
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/80lNjkcp6gI" allowfullscreen></iframe>
+                                                </div>
+                                                <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                            </div>              
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <a class="pull-left" href="#">
+                                            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+                                            </a>
+                                            <div class="media-body">
+                                            <div class="well well-lg">
+                                                <h4 class="media-heading text-uppercase reviews">Kriztine</h4>
+                                                <ul class="media-date text-uppercase reviews list-inline">
+                                                    <li class="dd">22</li>
+                                                    <li class="mm">09</li>
+                                                    <li class="aaaa">2014</li>
+                                                </ul>
+                                                <p class="media-comment">
+                                                    Yehhhh... Thanks for sharing.
+                                                </p>
+                                                <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                                <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo"><span class="glyphicon glyphicon-comment"></span> 1 comment</a>
+                                            </div>              
+                                            </div>
+                                            <div class="collapse" id="replyTwo">
+                                                <ul class="media-list">
+                                                    <li class="media media-replied">
+                                                        <a class="pull-left" href="#">
+                                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
+                                                        </a>
+                                                        <div class="media-body">
+                                                        <div class="well well-lg">
+                                                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Lizz</h4>
+                                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                                <li class="dd">22</li>
+                                                                <li class="mm">09</li>
+                                                                <li class="aaaa">2014</li>
+                                                            </ul>
+                                                            <p class="media-comment">
+                                                                Classy!
+                                                            </p>
+                                                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                                        </div>              
+                                                        </div>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                        </li>
+                                        </ul>
+                                    
+                                        </div>
+
+
+
+                                        <div class="tab-pane" id="settings">
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header card-chart" data-background-color="green">
+                                                    <div class="ct-chart" id="dailySalesChart"></div>
+                                                </div>
+                                                <div class="card-content">
+                                                    <h4 class="title">Project Workflow</h4>
+                                                    <p class="category">
+                                                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase today</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="stats">
+                                                        <i class="material-icons">access_time</i> updated 4 minutes ago
                                                     </div>
-                                                </li>
-                                                <li class="media">
-                                                    <a class="pull-left" href="#">
-                                                    <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
-                                                    </a>
-                                                    <div class="media-body">
-                                                    <div class="well well-lg">
-                                                        <h4 class="media-heading text-uppercase reviews">Kriztine</h4>
-                                                        <ul class="media-date text-uppercase reviews list-inline">
-                                                            <li class="dd">22</li>
-                                                            <li class="mm">09</li>
-                                                            <li class="aaaa">2014</li>
-                                                        </ul>
-                                                        <p class="media-comment">
-                                                            Yehhhh... Thanks for sharing.
-                                                        </p>
-                                                        <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                        <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo"><span class="glyphicon glyphicon-comment"></span> 1 comment</a>
-                                                    </div>              
-                                                    </div>
-                                                    <div class="collapse" id="replyTwo">
-                                                        <ul class="media-list">
-                                                            <li class="media media-replied">
-                                                                <a class="pull-left" href="#">
-                                                                <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
-                                                                </a>
-                                                                <div class="media-body">
-                                                                <div class="well well-lg">
-                                                                    <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Lizz</h4>
-                                                                    <ul class="media-date text-uppercase reviews list-inline">
-                                                                        <li class="dd">22</li>
-                                                                        <li class="mm">09</li>
-                                                                        <li class="aaaa">2014</li>
-                                                                    </ul>
-                                                                    <p class="media-comment">
-                                                                        Classy!
-                                                                    </p>
-                                                                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                                                                </div>              
-                                                                </div>
-                                                            </li>
-                                                        </ul>  
-                                                    </div>
-                                                </li>
-                                                </ul> 
+                                                </div>
                                             </div>
                                         </div>
-                                        
-
-                                        <!-- tab pane -->
-                                        <div class="tab-pane" id="settings">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Export Market Entry Support Services/ Nigeria Trade House (NTH)</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Conduct an export potential Survey in all States.
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Conduct an export potential Survey in all States.
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Conduct an export potential Survey in all States.
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>African Growth and Opportunity Act (AGOA)</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header card-chart" data-background-color="orange">
+                                                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                                                </div>
+                                                <div class="card-content">
+                                                    <h4 class="title">Performance</h4>
+                                                    <p class="category">Recent Teams Performance</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="stats">
+                                                        <i class="material-icons">access_time</i> project completed 2 days ago
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div> <!-- tab-content -->
-                                </div> <!-- card-content -->
-                            </div> <!-- / card -->
-                        </div> <!-- / col --> 
-                        
-                    </div> <!-- / row -->
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header card-chart" data-background-color="red">
+                                                    <div class="ct-chart" id="completedTasksChart"></div>
+                                                </div>
+                                                <div class="card-content">
+                                                    <h4 class="title">Project Stats</h4>
+                                                    <p class="category">Last Project Performance</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="stats">
+                                                        <i class="material-icons">access_time</i> project completed 2 days ago
+                                                    </div>
+                                                </div>
+                                         </div>
+                                        </div>
+                                    </div>
 
-                </div> <!-- / container-fluid -->
-            </div> <!-- / content -->
-        </div>  <!-- / main-panel -->
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                   <!-- <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="green">
+                                    <div class="ct-chart" id="dailySalesChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Project Workflow</h4>
+                                    <p class="category">
+                                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase today</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="orange">
+                                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Performance</h4>
+                                    <p class="category">Recent Teams Performance</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> project completed 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="red">
+                                    <div class="ct-chart" id="completedTasksChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Project Stats</h4>
+                                    <p class="category">Last Project Performance</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> project completed 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+<!--             <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">NEPC</a>
+                    </p>
+                </div>
+            </footer> -->
+        </div>
 
         <!-- floating button -->
         <div class="zoom">
         <a class="zoom-fab zoom-btn-large" id="zoomBtn"><i class="medium material-icons">add</i></a>
         <ul class="zoom-menu">
-            <li><a data-toggle="tooltip" data-placement="top" title="Add Team" class="zoom-fab zoom-btn-sm zoom-btn-person scale-transition scale-out"><i class="material-icons">group_add</i></a></li>
+            <li><a href="/dashboard/teams" data-toggle="tooltip" data-placement="top" title="Add Team" class="zoom-fab zoom-btn-sm zoom-btn-person scale-transition scale-out"><i class="material-icons">group_add</i></a></li>
             <li><a href="/dashboard/manage_projects" data-toggle="tooltip" data-placement="top" title="Add Project" class="zoom-fab zoom-btn-sm zoom-btn-doc scale-transition scale-out"><i class="material-icons">assessment</i></a></li>
             <!-- <li><a class="zoom-fab zoom-btn-sm zoom-btn-tangram scale-transition scale-out"></a></li> -->
             <li><a data-toggle="tooltip" data-placement="top" title="Settings" class="zoom-fab zoom-btn-sm zoom-btn-report scale-transition scale-out"><i class="material-icons">settings</i></a></li>
             <li><a href="/users/logout" data-toggle="tooltip" data-placement="top" title="Logout" class="zoom-fab zoom-btn-sm zoom-btn-feedback scale-transition scale-out"><i class="material-icons">exit_to_app</i></a></li>
         </ul>
+<!--         <div class="zoom-card scale-transition scale-out">
+            <ul class="zoom-card-content">
+            <li><a href="#">Content 1</a></li>
+            <li>Content 2</li>
+            <li>Content 3</li>
+            <li>Content 4</li>
+            <li>Content 5</li>
+            </ul>
+        </div> -->
         </div>
-        <!-- / floating button -->
+
 
     </div>
 </body>

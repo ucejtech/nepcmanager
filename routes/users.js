@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var auth = require('./dashboard').ensureAuthenticated;
 
 var User = require('../models/user');
 
@@ -14,7 +15,7 @@ router.get('/register', (req, res) => {
 });
 
 
-// Login
+// GET Login
 router.get('/login', (req, res) =>{
 	res.status(200).
 	render('loginform');
@@ -102,6 +103,54 @@ router.post('/login', passport.authenticate('local', {successRedirect:'/dashboar
         res.redirect('/dashboard');
 });
 
+
+// Update Profile
+router.post('/editProfile', function(req, res, next){
+
+    User.findById(req.user.id, function (err, user) {
+
+        // todo: don't forget to handle err
+
+        if (err) throw err;
+        if (!user) {
+            req.flash('error', 'No account found');
+            return res.redirect('/dashboard/profile');
+        }
+
+        // good idea to trim 
+        var email = req.body.email.trim();
+        var fullname = req.body.fullname.trim();
+        var username = req.body.username.trim();
+        var address = req.body.address.trim();
+        var city = req.body.city.trim();
+        var team = req.body.team.trim();
+
+
+        // validate 
+        if (!email || !username || !fullname) { 
+            req.flash('error_msg', 'One or more fields are empty');
+            return res.redirect('/users/profile'); // modified
+        }
+
+        
+        user.email = email;
+        //user.local.email = email; 
+        user.fullname = fullname;
+        user.username = username;
+        user.address = address;
+        user.city = city;
+        user.team = team;
+
+        // don't forget to save!
+        user.save(function (err) {
+
+        	if (err) throw err;
+        	req.flash('success_msg', 'Profile Updated!')
+            // todo: don't forget to handle err
+            res.redirect('/dashboard/profile');
+        });
+    });
+});
 
 // logout user
 router.get('/logout', (req, res) => {

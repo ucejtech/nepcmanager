@@ -53,6 +53,10 @@ var UserSchema = mongoose.Schema({
 	  unique: false,
 	  default: "Product Dept"
 	},
+	avatar: {
+		type: String,
+		default: "../assets/img/faces/marc.png"
+	},
 	createdAt: {
 		type: Date,
 		default: Date.now()
