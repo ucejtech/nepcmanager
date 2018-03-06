@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var auth = require('./dashboard').ensureAuthenticated;
+// var auth = require('./dashboard').ensureAuthenticated;
 
-var User = require('../models/user');
+var User = require('../models/usersModel');
 
 // Register
 router.get('/register', (req, res) => {
