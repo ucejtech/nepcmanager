@@ -446,6 +446,7 @@
                                 <div class="card-content">
 
                                     <ul class="new-messages" id="messages"></ul>
+
                                      
                                 </div>
                                 <div class="card-footer">
@@ -520,7 +521,7 @@
       return false;
     });
     socket.on('chat message', function(msg){
-      $('.new-messages').append($('<li>').text(msg));
+      $('.new-messages').append($('<li style="padding: 20px; background: #66BB6A" class="alert alert-success" role="alert">{{ user.username }}').text(msg));
     });
   });
 
