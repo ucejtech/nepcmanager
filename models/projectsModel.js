@@ -1,11 +1,34 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema   = mongoose.Schema;
 
-var projectsSchema = new Schema({
-	'project_name ' : String,
-	'lead_team' : String,
-	'collab_team' : Array,
-	'progress' : Number
+const projectsSchema = new Schema({
+	project_title : {
+		type: String,
+		default: 'Project Title'
+	},
+	lead_team: {
+		type: String,
+		default: "None"
+	},
+	collab_team: {
+		type: Array
+	}
+	tasks: {
+		iceblock: {
+			type: Array
+		},
+		ongoing: {
+			type: Array
+		},
+		completed: {
+			type: Array
+		}
+	},
+	progress: {
+		type: Number,
+		default: 0
+	}
+
 });
 
 module.exports = mongoose.model('projects', projectsSchema);

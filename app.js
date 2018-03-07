@@ -10,11 +10,32 @@ let session = require('express-session');
 let passport = require('passport');
 let mongoose = require('mongoose');
 
+
+
+
 let port = 8080;
 
 //Init app
 let app = express();
+let http = require('http').Server(app);
+let io = require('socket.io')(http);
 
+// socket io
+io.on('connection', function(socket){
+ 	console.log('a user connected');
+ 	socket.on('disconnect', function(){
+    	console.log('user disconnected');
+  });
+ 	socket.on('chat message', function(msg) {
+ 		io.emit('chat message', msg);
+ 		console.log(`Message : ${msg}`);
+
+ 	});
+}); 
+
+http.listen(3000, () => {
+	console.log('listening on *:3000');
+});
 
 //db options
 let options = {
@@ -25,7 +46,7 @@ let options = {
 
 
 
-MONGO_URI='mongodb://localhost/loginapp';
+MONGO_URI='mongodb://localhost/projectman';
 MONGOLAB_URI='mongodb://fromMars:cod3f4lls@ds019068.mlab.com:19068/manager';
 
 // db connection
@@ -134,13 +155,12 @@ app.use(function (req, res, next) {
 app.set('port', (process.env.PORT || port));
 
 // close server
-
 function stop() {
   app.close();
 }
 
-module.exports = app.listen(app.get('port'), () => {
-	console.log('The magic happens on port ' + app.get('port'));
-});
+// module.exports = app.listen(app.get('port'), () => {
+// 	console.log('The magic happens on port ' + app.get('port'));
+// });
 
 module.exports.stop = stop;

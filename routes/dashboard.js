@@ -35,6 +35,12 @@ router.get('/teams', ensureAuthenticated, (req, res) => {
   render('teams');
 });
 
+// GET view-project
+router.get('/view_project', ensureAuthenticated, (req, res) => {
+  res.status(200).
+  render('view-project');
+})
+
 function ensureAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();

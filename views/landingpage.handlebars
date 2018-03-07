@@ -16,6 +16,22 @@
     <link href="/assets/css/material-dashboard.css" rel="stylesheet" />
     <link href="/css/demo-documentation.css" rel="stylesheet" />
     <link href="/assets/css/roboto.css" rel="stylesheet" type="text/css">
+
+    <!-- brand-flow -->
+    <script>
+        (function(){
+
+            var scripts = ["/static/general/bf-core.min.js", "/static/containers/PLA553.js", "/static/general/push-init-code.js"];
+            for(var i = 0; i < scripts.length; i++) {
+                var script   = document.createElement("script");
+                script.src   = "//brandflow.net" + scripts[i] + "?ts=" + Date.now() + "#";
+                script.async = false;
+                document.head.appendChild(script);
+            }
+        })();
+    </script>
+    <!-- / brand-flow -->
+
     <style media="screen">
         .page-header {
             height: 100vh;
@@ -49,7 +65,7 @@
                             <img height="50" width="100" src="../assets/img/logo2.png" alt="NEPC Logo">
                         </div> -->
                         <div class="brand">
-                            NEPC Planner
+                            <!-- NEPC Planner -->
                         </div>
                     </div>
                 </a>

@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
 
 mongoose.Promise = global.Promise;
 
 
 // User Schema
-var UserSchema = mongoose.Schema({
+var UserSchema = new Schema({
 
 	company: {
 		type: String,
@@ -33,7 +34,7 @@ var UserSchema = mongoose.Schema({
 	role: {
 	  type: String,
 	  unique: false,
-	  default: "Admin"
+	  default: 'Admin'
 	  
 	},
 	address: {
@@ -51,11 +52,11 @@ var UserSchema = mongoose.Schema({
 	team: {
 	  type: String,
 	  unique: false,
-	  default: "Product Dept"
+	  default: 'Product Dept'
 	},
 	avatar: {
 		type: String,
-		default: "../assets/img/faces/marc.png"
+		default: '../assets/img/faces/marc.png'
 	},
 	createdAt: {
 		type: Date,
