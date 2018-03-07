@@ -513,7 +513,9 @@
 <script src="../assets/js/toast.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+
   $(function () {
+    var username = user.fullname
     var socket = io();
     $('form').submit(function(){
       socket.emit('chat message', $('#m').val());
@@ -521,7 +523,7 @@
       return false;
     });
     socket.on('chat message', function(msg){
-      $('.new-messages').append($('<li style="padding: 20px; background: #66BB6A" class="alert alert-success" role="alert">{{ user.username }}').text(msg));
+      $('.new-messages').append($(`<li style="padding: 20px; background: #66BB6A" class="alert alert-success" role="alert"> ${username}`).text(msg));
     });
   });
 

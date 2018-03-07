@@ -159,8 +159,8 @@ function stop() {
   app.close();
 }
 
-// module.exports = app.listen(app.get('port'), () => {
-// 	console.log('The magic happens on port ' + app.get('port'));
-// });
+module.exports = app.listen(app.get('port'), () => {
+	console.log('The magic happens on port ' + app.get('port'));
+});
 
 module.exports.stop = stop;
