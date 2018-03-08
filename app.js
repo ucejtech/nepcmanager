@@ -87,7 +87,13 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // Middlewares
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
+if (app.get('env') == 'production') {
+  app.use(morgan('common', { skip: function(req, res) { return res.statusCode < 400 }, stream: __dirname + '/../morgan.log' }));
+} else {
+  app.use(morgan('dev'));
+}
+
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
