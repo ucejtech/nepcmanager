@@ -11,6 +11,8 @@ let passport = require('passport');
 let mongoose = require('mongoose');
 let cookieSession = require('cookie-session')
 
+
+
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
@@ -33,16 +35,11 @@ io.on('connection', function(socket){
  	});
 }); 
 
-http.listen(port, host, () => {
+
+http.listen(port, host, (req, res) => {
+
 	console.log(`listening on *:${port}`);
 });
-
-//db options
-// let options = {
-//     server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
-//     replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }
-//               };
-              
 
 
 
@@ -87,7 +84,7 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // Middlewares
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 if (app.get('env') == 'production') {
   app.use(morgan('common', { skip: function(req, res) { return res.statusCode < 400 }, stream: __dirname + '/../morgan.log' }));
 } else {
