@@ -9,11 +9,11 @@ let flash = require('connect-flash');
 let session = require('express-session');
 let passport = require('passport');
 let mongoose = require('mongoose');
+let cookieSession = require('cookie-session')
 
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
-
-
-let port = 3000;
 
 //Init app
 let app = express();
@@ -33,15 +33,15 @@ io.on('connection', function(socket){
  	});
 }); 
 
-http.listen(process.env.PORT || port, () => {
+http.listen(port, host, () => {
 	console.log(`listening on *:${port}`);
 });
 
 //db options
-let options = {
-    server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
-    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }
-              };
+// let options = {
+//     server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+//     replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }
+//               };
               
 
 
@@ -49,28 +49,30 @@ let options = {
 MONGO_URI='mongodb://localhost/projectman';
 MONGOLAB_URI='mongodb://fromMars:cod3f4lls@ds019068.mlab.com:19068/manager';
 
-// db connection
-// mongoose.connect(MONGO_URI);
+//db connection
+mongoose.connect(MONGO_URI);
 
-// mongoose.connect(MONGOLAB_URI || MONGO_URI, function(error) {
-//   if(error) {
-//   	console.log('error: ', error);
-//   } else {
-//   	console.log('mongodb connection successful');
-//   	console.log(`Yay! look who's hosting us : ${db.collections.users.conn.host}`);
-//   	console.log(`I also connected to the remote db with the name: ${db.db.s.databaseName}`);
-//   	console.log()
+mongoose.connect(MONGOLAB_URI || MONGO_URI, function(error) {
+  if(error) {
+  	console.log('error: ', error);
+  } else {
+  	console.log('mongodb connection successful');
+  	console.log(`Yay! look who's hosting us : ${db.collections.users.conn.host}`);
+  	console.log(`I also connected to the remote db with the name: ${db.db.s.databaseName}`);
+  	console.log()
   	
-//   }
-// });
+  }
+});
+
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
-mongoose.connect(MONGOLAB_URI, function (error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
-});
+
+// mongoose.connect(MONGOLAB_URI, function (error) {
+//     if (error) console.error(error);
+//     else console.log('mongo connected');
+// });
 
 
 
@@ -98,11 +100,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
-app.use(session({
-	secret: 'cod3f4lls',
-	saveUninitialized: true,
-	resave: true
-}));
+// app.use(session({
+// 	secret: 'cod3f4lls',
+// 	saveUninitialized: true,
+// 	resave: true
+// }));
+
+// replace express session with cookie session to handle memory leakage
+app.use(cookieSession({
+	name: 'session',
+	keys: ['code', 'secret'],
+
+	// cookie options
+	maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
+
 
 // Passport Init
 app.use(passport.initialize());
