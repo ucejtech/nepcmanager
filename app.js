@@ -13,7 +13,7 @@ let mongoose = require('mongoose');
 
 
 
-let port = 8080;
+let port = 3000;
 
 //Init app
 let app = express();
@@ -33,8 +33,8 @@ io.on('connection', function(socket){
  	});
 }); 
 
-http.listen(port, () => {
-	console.log('listening on *:8080');
+http.listen(process.env.PORT || port, () => {
+	console.log(`listening on *:${port}`);
 });
 
 //db options
