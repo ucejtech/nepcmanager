@@ -11,14 +11,14 @@ module.exports = {
      * projectsController.list()
      */
     list: function (req, res) {
-        projectsModel.find(function (err, projectss) {
+        projectsModel.find(function (err, projects) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting projects.',
                     error: err
                 });
             }
-            return res.json(projectss);
+            return res.json(projects);
         });
     },
 

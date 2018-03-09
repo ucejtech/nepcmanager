@@ -97,6 +97,7 @@ module.exports.getUserById = (id, callback) => {
     User.findById(id, callback);
 };
 
+
 // compare passwords
 module.exports.comparePassword = (candidatePassword, hash, callback) => {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
