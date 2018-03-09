@@ -1,24 +1,25 @@
 let express = require('express');
-let path = require('path');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let morgan = require('morgan');
+let cors = require('cors');
 let exphbs = require('express-handlebars');
 let expressValidator = require('express-validator');
 let flash = require('connect-flash');
 let session = require('express-session');
 let passport = require('passport');
 let mongoose = require('mongoose');
-let cookieSession = require('cookie-session')
+let cookieSession = require('cookie-session');
 
 
+let path = require('path');
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
-
 //Init app
 let app = express();
+
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 
@@ -91,11 +92,13 @@ if (app.get('env') == 'production') {
   app.use(morgan('dev'));
 }
 
+// middlewares
+
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-
 app.use(cookieParser());
+app.use(cors());
 
 
 // Set static folder
@@ -163,8 +166,6 @@ app.use(function (req, res, next) {
 //   res.status(404).send("Sorry can't find that!")
   res.status(404).render('404');
 });
-
-
 
 
 // Set Port

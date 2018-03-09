@@ -536,7 +536,12 @@
       return false;
     });
     socket.on('chat message', function(msg){
-      $('.new-messages').append($('<li style="padding: 20px; class="alert alert-success" role="alert">').text(msg));
+        if(msg == ''){
+            console.log("Your message is empty");
+        } else {
+            $('.new-messages').append($('<li style="padding: 20px; class="alert alert-success" role="alert">').text(msg));
+        }
+      
     });
   });
 
@@ -567,7 +572,12 @@
     }
     });
     
-
+$(document).ready(function(){
+    $('.checkbox').click(function(){
+        document.querySelector()
+        $('tr').hide();
+    });
+});
 
 
 </script>

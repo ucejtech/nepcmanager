@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+// let formidable = require('formidable');
 // var auth = require('./dashboard').ensureAuthenticated;
 
 var User = require('../models/userModel');
@@ -126,10 +127,11 @@ router.post('/editProfile', function(req, res, next){
         var team = req.body.team.trim();
 
 
+
         // validate 
         if (!email || !username || !fullname) { 
             req.flash('error_msg', 'One or more fields are empty');
-            return res.redirect('/users/profile'); // modified
+            return res.redirect('/dashboard/profile'); // modified
         }
 
         
@@ -152,8 +154,59 @@ router.post('/editProfile', function(req, res, next){
     });
 });
 
+
+// upload picture
+let path = require('path');
+var multer = require('multer');
+//multer object creation
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+  }
+});
+
+// var UPLOAD_PATH = 'uploads';
+var upload = multer({ storage: storage }); // multer config
+
+router.post('/uploadPhoto', upload.single('photo'), async function(req, res){
+    try {
+
+        User.findById(req.user.id, function (err, user) {
+
+        if (err) throw err;
+        if (!user) {
+            req.flash('error', 'No account found');
+            return res.redirect('/dashboard/profile');
+        }
+
+        // update user avatar
+        var photoLocation = '../uploads/' + req.file.filename;
+        console.log(typeof photoLocation);
+        user.avatar = photoLocation;
+
+        // don't forget to save!
+        user.save(function (err) {
+
+            if (err) {throw err; res.redirect('/dashboard/profile')};
+
+            req.flash('success_msg', 'Profile Updated!')
+            res.redirect('/dashboard/profile');
+        });
+    });
+
+        console.log('upload was successful');
+
+    } catch (err) {
+        res.sendStatus(400);
+        console.log('an error')
+    }
+});
+
 // logout user
-router.get('/logout', (req, res) => {
+router.get('/logout', function(req, res){
     req.logout();
     
     req.flash('success_msg', 'You are now logged out.');

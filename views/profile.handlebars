@@ -313,8 +313,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card card-profile">
-                                <div class="card-avatar">
-                                    <a href="#pablo">
+                                <div class="card-avatar pagination-centered">
+                                    <a href="#profile">
                                         <img class="img" src="{{ user.avatar }}" />
                                     </a>
                                 </div>
@@ -328,48 +328,19 @@
                                         
                                     </p>
                                     <hr>
-                                    <a href="#pablo" class="btn btn-primary btn-round">change profile picture</a>
+                                <form action="/users/uploadPhoto" enctype="multipart/form-data" method="post">
+                                    <label class="btn btn-default btn-file">
+                                        Browse <input name="photo" type="file" style="display: none;">
+                                    </label>
+                                    <button type="submit" class="btn btn-primary btn-round"><i class="material-icons">cloud_upload</i></button>
+                                </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-<!--                     <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav> -->
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="/">NEPC</a>
-                    </p>
-                </div>
-            </footer>
+
         </div>
         <!-- floating button -->
         <div class="zoom">
@@ -405,8 +376,7 @@
 <script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="../assets/js/bootstrap-notify.js"></script>
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
 <!-- Material Dashboard javascript methods -->
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
@@ -438,8 +408,62 @@
     }
     });
 
-    $(document).ready(function() {
 
+    $(function() {
+
+      // listen for DOM change
+     $("input:file").change(function (){
+        //set fileName to val of input
+       var fileName = $(this).val();
+
+       // remove path
+       fileName = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+       console.log(fileName);
+
+       // validate file-type
+       var extention = fileName.charAt(fileName.length - 4) + fileName.charAt(fileName.length - 3) + fileName.charAt(fileName.length - 2) + fileName.charAt(fileName.length -1);
+
+       if((extention == '.jpg' || extention == '.png') && fileName.length != 0){
+
+        $(".filename").html(fileName);
+
+        // Notify User
+       $.notify({
+            icon: "info",
+            title: `<b>File:</b> ${fileName}`,
+            message: "Please wait...Loading file"
+        },{
+            showProgressbar: true,
+            delay: 2000,
+            
+        },{
+            mouse_over: null
+        })
+        
+       } else if(extention != '.jpg') {
+
+        // throw error
+        $.notify({
+            icon: "error",
+            title: "<b>Error:</b>",
+            message: "Invalid File."
+        },{
+            showProgressbar: false,
+            delay: 2000,
+            
+        },{
+            mouse_over: null
+        });
+
+       } else {
+
+       }   
+       
+
+     });
+  });
+
+$(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 

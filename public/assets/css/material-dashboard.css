@@ -5406,8 +5406,9 @@ footer .btn {
 
 .card-profile .card-avatar,
 .card-testimonial .card-avatar {
-    max-width: 130px;
-    max-height: 130px;
+/*    height: 150px;*/
+    max-width: 140px;
+    max-height: 150px;
     margin: -50px auto 0;
     border-radius: 50%;
     overflow: hidden;
