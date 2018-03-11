@@ -1,116 +1,119 @@
-var projectsModel = require('../models/projectsModel.js');
+var projectModel = require('../models/projectModel.js');
 
 /**
- * projectsController.js
+ * projectController.js
  *
- * @description :: Server-side logic for managing projectss.
+ * @description :: Server-side logic for managing projects.
  */
 module.exports = {
 
     /**
-     * projectsController.list()
+     * projectController.list()
      */
     list: function (req, res) {
-        projectsModel.find(function (err, projects) {
+        projectModel.find(function (err, project) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting projects.',
+                    message: 'Error when getting project.',
                     error: err
                 });
             }
-            return res.json(projects);
+            return res.json(project);
         });
     },
 
     /**
-     * projectsController.show()
+     * projectController.show()
      */
     show: function (req, res) {
         var id = req.params.id;
-        projectsModel.findOne({_id: id}, function (err, projects) {
+        projectModel.findOne({_id: id}, function (err, project) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting projects.',
+                    message: 'Error when getting project.',
                     error: err
                 });
             }
-            if (!projects) {
+            if (!project) {
                 return res.status(404).json({
-                    message: 'No such projects'
+                    message: 'No such project'
                 });
             }
-            return res.json(projects);
+            return res.json(project);
         });
     },
 
     /**
-     * projectsController.create()
+     * projectController.create()
      */
     create: function (req, res) {
-        var projects = new projectsModel({
-			project_name  : req.body.project_name ,
+        var project = new projectModel({
+			project_title  : req.body.project_title ,
+            project_description : req.body.project_description,
 			lead_team : req.body.lead_team,
 			collab_team : req.body.collab_team,
-			progress : req.body.progress
-
+			
         });
 
-        projects.save(function (err, projects) {
+        project.save(function (err, project) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when creating projects',
+                    message: 'Error when creating project',
                     error: err
                 });
             }
-            return res.status(201).json(projects);
+            console.log(project);
+            res.status(201).
+            redirect('/dashboard');
         });
     },
 
     /**
-     * projectsController.update()
+     * projectController.update()
      */
     update: function (req, res) {
         var id = req.params.id;
-        projectsModel.findOne({_id: id}, function (err, projects) {
+        projectModel.findOne({_id: id}, function (err, project) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting projects',
+                    message: 'Error when getting project',
                     error: err
                 });
             }
-            if (!projects) {
+            if (!project) {
                 return res.status(404).json({
-                    message: 'No such projects'
+                    message: 'No such project'
                 });
             }
 
-            projects.project_name  = req.body.project_name  ? req.body.project_name  : projects.project_name ;
-			projects.lead_team = req.body.lead_team ? req.body.lead_team : projects.lead_team;
-			projects.collab_team = req.body.collab_team ? req.body.collab_team : projects.collab_team;
-			projects.progress = req.body.progress ? req.body.progress : projects.progress;
+            project.project_name  = req.body.project_name  ? req.body.project_name  : project.project_name ;
+			project.lead_team = req.body.lead_team ? req.body.lead_team : project.lead_team;
+			project.collab_team = req.body.collab_team ? req.body.collab_team : project.collab_team;
+			project.progress = req.body.progress ? req.body.progress : project.progress;
 			
-            projects.save(function (err, projects) {
+            project.save(function (err, project) {
                 if (err) {
                     return res.status(500).json({
-                        message: 'Error when updating projects.',
+                        message: 'Error when updating project.',
                         error: err
                     });
                 }
 
-                return res.json(projects);
+                return res.json(project);
             });
         });
     },
 
+
     /**
-     * projectsController.remove()
+     * projectController.remove()
      */
     remove: function (req, res) {
         var id = req.params.id;
-        projectsModel.findByIdAndRemove(id, function (err, projects) {
+        projectModel.findByIdAndRemove(id, function (err, project) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when deleting the projects.',
+                    message: 'Error when deleting the project.',
                     error: err
                 });
             }

@@ -19,7 +19,9 @@
     <link href="/assets/css/material-icons.css" rel="stylesheet">
     <link href="/assets/css/roboto.css" rel="stylesheet" type="text/css">
     <link href="/css/floating-button.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/multi-select.css">
+
 
 </head>
 
@@ -285,57 +287,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header card-chart" data-background-color="green">
-                                    <div class="ct-chart" id="dailySalesChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="title">Project Workflow</h4>
-                                    <p class="category">
-                                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase today</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> updated 4 minutes ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header card-chart" data-background-color="orange">
-                                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="title">Performance</h4>
-                                    <p class="category">Recent Teams Performance</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> project completed 2 days ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header card-chart" data-background-color="red">
-                                    <div class="ct-chart" id="completedTasksChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="title">Project Stats</h4>
-                                    <p class="category">Last Project Performance</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> project completed 2 days ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card card-nav-tabs">
@@ -758,7 +709,56 @@
                 <h4 class="modal-title">Add Project</h4>
                 </div>
                 <div class="modal-body">
-                <p>This is the project add up.</p>
+                    <form method="POST" action="/projects">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Project Title</label>
+                                    <input name="project_title" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Lead Team</label>
+                                        <select name="lead_team" id="inputState" class="form-control">
+                                            <option selected>{{ user.team }}</option>
+                                            <option>Policy & Strategy</option>
+                                            <option>Regional Office</option>
+                                            <option>International Export Office (IEO)</option>
+                                            <option>NEO</option>
+                                            <option>P&S</option>
+                                            <option>CC</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Collaborative Team</label>
+                                        <select multiple="multiple" name="collab_team[]" id="collab" class="form-control">
+                                            <option>{{ user.team }}</option>
+                                            <option>Policy & Strategy</option>
+                                            <option>Regional Office</option>
+                                            <option>International Export Office (IEO)</option>
+                                            <option>NEO</option>
+                                            <option>P&S</option>
+                                            <option>CC</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Project Description</label>
+                                    <input name="project_description" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary pull-right">Create Project</button>
+                        <div class="clearfix"></div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -833,8 +833,11 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <!-- <script src="../assets/js/demo.js"></script> -->
 <script src="../assets/js/jquery-ui.min.js"></script>
-
+<!-- multi-select for modal -->
+<script src="/assets/js/jquery.multi-select.js" type="text/javascript"></script>
 <script>
+
+$('#collab').multiSelect();
 
 
 $('#zoomBtn').click(function() {
@@ -876,9 +879,9 @@ $('.zoom-btn-sm').click(function() {
 
     // $('[data-toggle="tooltip"]').tooltip();
 
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
+    // $('#sidebarCollapse').on('click', function () {
+    //     $('#sidebar').toggleClass('active');
+    // });
 
         $.notify({
             icon: "notifications",

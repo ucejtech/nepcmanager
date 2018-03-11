@@ -74,10 +74,11 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 
 
-//create routes
+// include routes
 let routes = require('./routes/index');
 let users = require('./routes/users');
 let dashboard = require('./routes/dashboard');
+let projects = require('./routes/projectsRoutes');
 
 //view engine
 app.set('views', path.join(__dirname, 'views'));
@@ -91,15 +92,12 @@ if (app.get('env') == 'production') {
 } else {
   app.use(morgan('dev'));
 }
-
-// middlewares
-
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(cookieParser());
 app.use(cors());
-
+app.use(flash());
 
 // Set static folder
 
@@ -145,8 +143,8 @@ app.use(expressValidator({
 	}
 }));
 
-// connect Flash middleware
-app.use(flash());
+
+
 
 // Global vars
 app.use(function (req, res, next) {
@@ -162,6 +160,7 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users',  users);
 app.use('/dashboard', dashboard);
+app.use('/projects', projects);
 app.use(function (req, res, next) {
 //   res.status(404).send("Sorry can't find that!")
   res.status(404).render('404');

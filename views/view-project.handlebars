@@ -183,64 +183,25 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="card card-plain">
-                                <div id="projectName" class="text-center card-header" data-background-color="green" contentEditable=true>
-                                    <h4 class="title">Project Name</h4>
-                                    <p class="category">Project details</p>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="row">
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <!-- card header -->
-                            <div class="card card-nav-tabs">
+
+                            <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <!-- <span class="nav-tabs-title">Tasks:</span> -->
-                                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                                <li class="active">
-                                                    <a href="#profile" data-toggle="tab">
-                                                        <i class="material-icons">toc</i> Tasks
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="">
-                                                    <a href="#messages" data-toggle="tab">
-                                                        <i class="material-icons">check</i> Completed
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <h4 class="title">Task Lists (Current)</h4>
+                                    <p class="category">
+                                    </p>
                                 </div>
-
-                                <!-- card content -->
                                 <div class="card-content">
-                                    <div class="tab-content">
-
-             
-                                        <!-- tab pane -->
-                                        <div class="tab-pane active" id="profile">
-                                            <div id="sortable" class="list-group">
-                                            <ul>
+                                    <div id="tasks" class="list-group">
+                                            <ul class="sortable-list">
+                                                <!-- task 1 -->
                                                 <li href="#" class="list-group-item">
                                                     <h5 class="list-group-item-heading">Export Market Entry Support Services/ Nigeria Trade House (NTH)</h5>
                                                     <p class="text-muted list-group-item-text">
-                                                        Task should be handled by more than one individuals
-                                                            <span id="lead-team" class="checkbox pulist person_addll-right">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </span>                                                        
+                                                        N50,000                                                       
                                                     </p>
                                                     <hr>
                                                     <span id="teams">
@@ -259,7 +220,136 @@
                                                                     <li><a href="#">David Elijah</a></li>
                                                                     <li><a href="#">Samuel Austin</a></li>
                                                                     <li role="separator" class="divider"></li>
-                                                                    <li><a href="#">Separated link</a></li>
+                            
+                                                                </ul>
+                                                            </div>
+                                                            </span>
+<!--                                                             <span id="lead-team" class="checkbox pull-right">
+                                                                <label>
+                                                                    <input type="checkbox" name="optionsCheckboxes">
+                                                                </label>
+                                                            </span> -->
+
+                                                            <span id="lead-team" class="pull-right">
+                                                                <a id="toggle-chat" class="small-icon material-icons">chat</a>
+                                                            </span>
+                                                            
+                                                        </div>
+                                                    </div>    
+                                                    </span>
+
+                                                </li>
+                                                
+                                                <!-- task 2 -->
+                                                <li href="#" class="list-group-item">
+                                                    <h5 class="list-group-item-heading">Export Market Entry Support Services/ Nigeria Trade House (NTH)</h5>
+                                                    <p class="text-muted list-group-item-text">
+                                                        N50,000                                                       
+                                                    </p>
+                                                    <hr>
+                                                    <span id="teams">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="label label-success">IEO</span> |
+                                                            <span id="collab-team" class="label label-warning">P&C</span>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="pull-right">
+                                                            <div class="dropdown">
+                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
+                                                               </a>
+                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <li><a href="#">Onuoha Martins</a></li>
+                                                                    <li><a href="#">David Elijah</a></li>
+                                                                    <li><a href="#">Samuel Austin</a></li>
+                                                                    <li role="separator" class="divider"></li>
+                            
+                                                                </ul>
+                                                            </div>
+                                                            </span>
+<!--                                                             <span id="lead-team" class="checkbox pull-right">
+                                                                <label>
+                                                                    <input type="checkbox" name="optionsCheckboxes">
+                                                                </label>
+                                                            </span> -->
+
+                                                            <span id="lead-team" class="pull-right">
+                                                                <a id="toggle-chat" class="small-icon material-icons">chat</a>
+                                                            </span>
+                                                            
+                                                        </div>
+                                                    </div>    
+                                                    </span>
+
+                                                </li>
+
+                                                <!-- task 3 -->
+                                                <li href="#" class="list-group-item">
+                                                    <h5 class="list-group-item-heading">Export Market Entry Support Services/ Nigeria Trade House (NTH)</h5>
+                                                    <p class="text-muted list-group-item-text">
+                                                        N50,000                                                       
+                                                    </p>
+                                                    <hr>
+                                                    <span id="teams">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="label label-success">IEO</span> |
+                                                            <span id="collab-team" class="label label-warning">P&C</span>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="pull-right">
+                                                            <div class="dropdown">
+                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
+                                                               </a>
+                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <li><a href="#">Onuoha Martins</a></li>
+                                                                    <li><a href="#">David Elijah</a></li>
+                                                                    <li><a href="#">Samuel Austin</a></li>
+                                                                    <li role="separator" class="divider"></li>
+                            
+                                                                </ul>
+                                                            </div>
+                                                            </span>
+<!--                                                             <span id="lead-team" class="checkbox pull-right">
+                                                                <label>
+                                                                    <input type="checkbox" name="optionsCheckboxes">
+                                                                </label>
+                                                            </span> -->
+
+                                                            <span id="lead-team" class="pull-right">
+                                                                <a id="toggle-chat" class="small-icon material-icons">chat</a>
+                                                            </span>
+                                                            
+                                                        </div>
+                                                    </div>    
+                                                    </span>
+
+                                                </li>
+
+                                                <!-- task 4 -->
+                                                <li href="#" class="list-group-item">
+                                                    <h5 class="list-group-item-heading">Export Market Entry Support Services/ Nigeria Trade House (NTH)</h5>
+                                                    <p class="text-muted list-group-item-text">
+                                                        N50,000                                                       
+                                                    </p>
+                                                    <hr>
+                                                    <span id="teams">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="label label-success">IEO</span> |
+                                                            <span id="collab-team" class="label label-warning">P&C</span>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="pull-right">
+                                                            <div class="dropdown">
+                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
+                                                               </a>
+                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <li><a href="#">Onuoha Martins</a></li>
+                                                                    <li><a href="#">David Elijah</a></li>
+                                                                    <li><a href="#">Samuel Austin</a></li>
+                                                                    <li role="separator" class="divider"></li>
+                            
                                                                 </ul>
                                                             </div>
                                                             </span>
@@ -280,447 +370,12 @@
                                                 </li>
 
                                             </ul>
-
-                                            <!-- task 2 -->
-                                            <ul>
-                                                <li href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">
-                                                        Engagement & high level meeting with the office of Vice-President to enlist support for the Project
-                                                    </h4>
-                                                    <p class="list-group-item-text">meet with the office of Vice-President
-                                                    </p>
-                                                    <hr>
-                                                    <span id="teams">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="label label-success">IEO</span> |
-                                                            <span id="collab-team" class="label label-warning">P&C</span>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="pull-right">
-                                                            <div class="dropdown">
-                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
-                                                               </a>
-                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                    <li><a href="#">Onuoha Martins</a></li>
-                                                                    <li><a href="#">David Elijah</a></li>
-                                                                    <li><a href="#">Samuel Austin</a></li>
-                                                                    <li role="separator" class="divider"></li>
-                                                                    <li><a href="#">Separated link</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            </span>
-<!--                                                             <span id="lead-team" class="pull-right">
-                                                                <label class="small-icon material-icons btn-file">image
-                                                                    <input name="photo" type="file" style="display: none;">
-                                                                </label>
-                                                            </span> -->
-
-                                                            <span id="lead-team" class="pull-right">
-                                                                <a id="toggle-chat2" class="small-icon material-icons">chat</a>
-                                                            </span>
-                                                            
-                                                        </div>
-                                                    </div>    
-                                                    </span>
-
-                                                </li>
-
-                                            </ul>
                                         
-                                        <!-- task 3 -->
-                                            <ul>
-                                                <li href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">
-                                                        Identify their prospects and challenges for necessary intervention and output expansion
-                                                    </h4>
-                                                    <p class="list-group-item-text">intervention and output expansion
-                                                    </p>
-                                                    <hr>
-                                                    <span id="teams">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="label label-success">IEO</span> |
-                                                            <span id="collab-team" class="label label-warning">P&C</span>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="pull-right">
-                                                            <div class="dropdown">
-                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
-                                                               </a>
-                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                    <li><a href="#">Onuoha Martins</a></li>
-                                                                    <li><a href="#">David Elijah</a></li>
-                                                                    <li><a href="#">Samuel Austin</a></li>
-                                                                    <li role="separator" class="divider"></li>
-                                                                    <li><a href="#">Separated link</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            </span>
-<!--                                                             <span id="lead-team" class="pull-right">
-                                                                <label class="small-icon material-icons btn-file">image
-                                                                    <input name="photo" type="file" style="display: none;">
-                                                                </label>
-                                                            </span> -->
+                                        </div> <!-- / list-group -->
+                                    </div> <!-- / card-content -->
+                                </div> <!-- / card -->
 
-                                                            <span id="lead-team" class="pull-right">
-                                                                <a id="toggle-chat3" class="small-icon material-icons">chat</a>
-                                                            </span>
-                                                            
-                                                        </div>
-                                                    </div>    
-                                                    </span>
-
-                                                </li>
-
-                                            </ul>
-
-                                            <ul>
-                                                <li href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">Task 4</h4>
-                                                    <p class="list-group-item-text">task details...
-                                                    </p>
-                                                    <hr>
-                                                    <span id="teams">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="label label-success">IEO</span> |
-                                                            <span id="collab-team" class="label label-warning">P&C</span>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="pull-right">
-                                                            <div class="dropdown">
-                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
-                                                               </a>
-                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                    <li><a href="#">Onuoha Martins</a></li>
-                                                                    <li><a href="#">David Elijah</a></li>
-                                                                    <li><a href="#">Samuel Austin</a></li>
-                                                                    <li role="separator" class="divider"></li>
-                                                                    <li><a href="#">Separated link</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            </span>
-<!--                                                             <span id="lead-team" class="pull-right">
-                                                                <label class="small-icon material-icons btn-file">image
-                                                                    <input name="photo" type="file" style="display: none;">
-                                                                </label>
-                                                            </span> -->
-
-                                                            <span id="lead-team" class="pull-right">
-                                                                <a id="toggle-chat4" class="small-icon material-icons">chat</a>
-                                                            </span>
-                                                            
-                                                        </div>
-                                                    </div>    
-                                                    </span>
-
-                                                </li>
-
-                                            </ul>
-
-
-                                            <ul>
-                                                <li href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">
-                                                    Strategic Collaboration with Multi-lateral Agencies
-                                                </h4>
-                                                    <p class="list-group-item-text">Collaboration with Agencies
-                                                    </p>
-                                                    <hr>
-                                                    <span id="teams">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="label label-success">IEO</span> |
-                                                            <span id="collab-team" class="label label-success">P&C</span>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <span id="lead-team" class="pull-right">
-                                                            <div class="dropdown">
-                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
-                                                               </a>
-                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                    <li><a href="#">Onuoha Martins</a></li>
-                                                                    <li><a href="#">David Elijah</a></li>
-                                                                    <li><a href="#">Samuel Austin</a></li>
-                                                                    <li role="separator" class="divider"></li>
-                                                                    <li><a href="#">Separated link</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            </span>
-<!--                                                             <span id="lead-team" class="pull-right">
-                                                                <label class="small-icon material-icons btn-file">image
-                                                                    <input name="photo" type="file" style="display: none;">
-                                                                </label>
-                                                            </span> -->
-
-                                                            <span id="lead-team" class="pull-right">
-                                                                <a id="toggle-chat5" class="small-icon material-icons">chat</a>
-                                                            </span>
-                                                            
-                                                        </div>
-                                                    </div>    
-                                                    </span>
-
-                                                </li>
-
-                                            </ul>
-                                   
-                                            </div>
-                                <!-- /.list-group -->
-                                            <!-- <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Strategic Collaboration with Multi-lateral Agencies</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Advocacy visits to identified projects, investors & exporters</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Engagement & high level meeting with the office of Vice-President to enlist support for the Project
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Identify their prospects and challenges for necessary intervention and output expansion</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Strategic Collaboration with Multi-lateral Agencies</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes">
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Engagement & high level meeting with the office of Vice-President to enlist support for the Project
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table> -->
-                                        </div> <!-- /tab-pane -->
-
-                                        <!-- tab-pane -->
-                                        <div class="tab-pane" id="messages">
-                                            <div id="sortable" class="list-group">
-                                                <a id="completed"  href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-twitter fa-fw"></i>Create new teams
-                                                <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                                                </span>                   
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-envelope fa-fw"></i>Send Messages
-                                                <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                                                </span>
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-tasks fa-fw"></i>Add New tasks
-                                                <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                                </span>
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-upload fa-fw"></i>Automate Responses
-                                                <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                                </span>
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-bolt fa-fw"></i>Review Budget
-                                                <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                                </span>
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-warning fa-fw"></i>Meet partners
-                                                <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                                </span>
-                                                </a>
-
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-bolt fa-fw"></i>Complete meetings
-                                                <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                                </span>
-                                                </a>
-                                                <a id="completed" href="#" class="list-group-item disabled">
-                                                    <i class="fa fa-warning fa-fw"></i>Renovate buildings
-                                                <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                                </span>
-                                                </a>
-                                            
-                                   
-                                            </div>
-                                           <!--  <table class="table">
-                                                <tbody>
-                                                    <tr class="text-muted">
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked disabled>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Export Market Entry Support Services/ Nigeria Trade House (NTH)</td>
-                                                        <td class="td-actions text-right">
-                                                           
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="text-muted">
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked disabled>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Conduct an export potential Survey in all States</td>
-                                                        <td class="td-actions text-right">
-                                                          
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="text-muted">
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked disabled>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>African Growth and Opportunity Act (AGOA)</td>
-                                                        <td class="td-actions text-right">
-                                                     
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="text-muted">
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked disabled>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Identify their prospects and challenges for necessary intervention and output expansion</td>
-                                                        <td class="td-actions text-right">
-                                                           
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="text-muted">
-                                                        <td>
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" name="optionsCheckboxes" checked disabled>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Engagement & high level meeting with the office of Vice-President to enlist support for the Project</td>
-                                                        <td class="td-actions text-right">
-        
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table> -->
-                                        </div> <!-- /tab-pane -->
-
-
-                                        </div> <!-- tab-content -->
-                                    </div>  <!-- card-content -->
-                                </div> <!-- card -->
+                            
                             </div> <!-- / col-lg-6 -->
 
 
@@ -736,8 +391,66 @@
 
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
+                            <!-- card header -->
+
+                            <div class="card" style="min-height: 250px;">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Completed</h4>
+                                    <p class="category">
+                                    </p>
+                                </div>
+                                <div class="card-content">
+
+                                    <div id="tasks" class="list-group">
+
+                                        <ul class="sortable-list">
+                                                <li href="#" class="list-group-item">
+                                                    <h5 class="list-group-item-heading">Export Market Entry Support Services/ Nigeria Trade House (NTH)</h5>
+                                                    <p class="text-muted list-group-item-text">
+                                                        N50,000                                                       
+                                                    </p>
+                                                    <hr>
+                                                    <span id="teams">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="label label-success">IEO</span> |
+                                                            <span id="collab-team" class="label label-warning">P&C</span>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <span id="lead-team" class="pull-right">
+                                                            <div class="dropdown">
+                                                               <a href="" class="small-icon material-icons dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person_add
+                                                               </a>
+                                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                    <li><a href="#">Onuoha Martins</a></li>
+                                                                    <li><a href="#">David Elijah</a></li>
+                                                                    <li><a href="#">Samuel Austin</a></li>
+                                                                    <li role="separator" class="divider"></li>
+                            
+                                                                </ul>
+                                                            </div>
+                                                            </span>
+<!--                                                             <span id="lead-team" class="checkbox pull-right">
+                                                                <label>
+                                                                    <input type="checkbox" name="optionsCheckboxes">
+                                                                </label>
+                                                            </span> -->
+
+                                                            <span id="lead-team" class="pull-right">
+                                                                <a id="toggle-chat" class="small-icon material-icons">chat</a>
+                                                            </span>
+                                                            
+                                                        </div>
+                                                    </div>    
+                                                    </span>
+                                                </li>   
+                                        </ul>
+                                    </div>
+
+                                </div> <!-- / card-content -->
+                                </div> <!-- / card -->
                             <!-- chat panel 1-->
-                            <div class="panel panel-default toggler" style="display: none;">
+                            <div class="message-box panel panel-default toggler" style="display: none;">
                                  <div class="panel-heading">Task 1 Conversation</div>
                                 <div class="panel-body" style="height:450px;overflow-y:auto">
                                     <ul class="new-messages media-list">
@@ -883,7 +596,7 @@
                                             <input name="photo" type="file" style="display: none;">
                                         </label>
                                         <label class="small-icon material-icons btn-file">attach_file
-                                            <input name="photo" type="file" style="display: none;">
+                                            <input name="file" type="file" style="display: none;">
                                         </label>
                                  
 
@@ -966,24 +679,32 @@ $("#toggle-chat5").click(function(){
     $(".toggler5").toggle("clip");
 });
 
-// edit project name
-var editable = document.getElementById('projectName');
-editable.addEventListener('input', function(){
-    showError('Saving...','success',true);
-})
+$('#tasks').sortable({
+    connectWith: '#tasks #sortable-list'
+});
+
 
 
 
 
 // sortable task list
 $( function() {
-    $( "#sortable" ).sortable({
-        opacity: 0.5,
-        zIndex: 999
-    });
-    $( "#sortable" ).disableSelection();
 
-  
+
+
+
+
+    // cookies
+
+    $(".row .sortable-list").sortable({
+            connectWith: '.row .sortable-list',
+            tolerance: "pointer",
+            forceHelperSize: true,
+            forcePlaceholderSize: true,
+            opacity: 0.8,
+            // placeholder: 'placeholder',
+            scroll: false
+}).disableSelection();
 
     $(".list-group-item").hover(function(){
         $(this).css({"cursor": "move"});
@@ -991,29 +712,6 @@ $( function() {
     $(".small-icon").hover(function(){
         $(this).css({"cursor": "pointer"});
     })
-
-      // TODO: refactor logic to show hover effect on only uncompleted tasks
-
-    //    $(function(){
-    //         $(this).css({"cursor": "move", "background": "#fff", "color": "#555"});
-    //     });
-
-    // disabled list-items don't get hover effect
-   //  function hasClass(element, cls) {
-   //  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-   //  }
-   //  var completedElement = document.getElementsByTagName('a'); 
-
-   // if(hasClass(completedElement, 'disabled') == true){
-   //      $(".list-group-item").hover(function(){
-   //      $(this).css({"cursor": "move", "background": "grey", "color": "#fff"});
-
-   //      }, function(){
-   //          $(this).css({"cursor": "move", "background": "#fff", "color": "#555"});
-   //      });
-
-   //  } 
-
 
 
   });
@@ -1026,7 +724,6 @@ $( function() {
 // websocket for realtime conversation
 
 $(function () {
-
     var socket = io();
     $('form').submit(function(){
       socket.emit('chat message', $('#m').val());
@@ -1044,7 +741,7 @@ $(function () {
             $('.new-messages').append($(`<li class="media">
                                         <div class="media-left">
                                         <a href="#">
-                                            <img class="media-object img-thumbnail" height="56" width="56" src="{{ user.avatar }}" alt="user profile">
+                                            <img class="media-object img-circle" height="56" width="56" src="{{ user.avatar }}" alt="user profile">
                                         </a>
                                         </div>
                                         <div class="media-body">
