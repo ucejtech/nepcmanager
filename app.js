@@ -48,29 +48,28 @@ MONGO_URI='mongodb://localhost/projectman';
 MONGOLAB_URI='mongodb://fromMars:cod3f4lls@ds019068.mlab.com:19068/manager';
 
 //db connection
-mongoose.connect(MONGO_URI);
 
-mongoose.connect(MONGOLAB_URI || MONGO_URI, function(error) {
-  if(error) {
-  	console.log('error: ', error);
-  } else {
-  	console.log('mongodb connection successful');
-  	console.log(`Yay! look who's hosting us : ${db.collections.users.conn.host}`);
-  	console.log(`I also connected to the remote db with the name: ${db.db.s.databaseName}`);
-  	console.log()
+// mongoose.connect(MONGOLAB_URI || MONGO_URI, function(error) {
+//   if(error) {
+//   	console.log('error: ', error);
+//   } else {
+//   	console.log('mongodb connection successful');
+//   	console.log(`Yay! look who's hosting us : ${db.collections.users.conn.host}`);
+//   	console.log(`I also connected to the remote db with the name: ${db.db.s.databaseName}`);
+//   	console.log()
   	
-  }
-});
+//   }
+// });
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
 
-// mongoose.connect(MONGOLAB_URI, function (error) {
-//     if (error) console.error(error);
-//     else console.log('mongo connected');
-// });
+mongoose.connect(MONGOLAB_URI, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected');
+});
 
 
 
