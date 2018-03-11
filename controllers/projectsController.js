@@ -63,8 +63,10 @@ module.exports = {
                 });
             }
             console.log(project);
+            req.flash('success_msg', 'New Project Created!');
             res.status(201).
-            redirect('/dashboard');
+            redirect('/dashboard/projects');
+
         });
     },
 
